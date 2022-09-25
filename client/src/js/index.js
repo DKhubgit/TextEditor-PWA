@@ -2,6 +2,7 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import img from '../images/icon_96x96.png'
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
@@ -22,6 +23,9 @@ const editor = new Editor();
 if (typeof editor === 'undefined') {
   loadSpinner();
 }
+
+let image = document.getElementsByTagName('img');
+image.setAttribute('src', img);
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {

@@ -8,7 +8,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      // install: './src/js/install.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -56,6 +56,13 @@ module.exports = () => {
             options: {
               presets: ['@babel/preset-env']
             }
+          }
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          loader: 'file-loader',
+          options: {
+            name: '/assets/icons/[name].[ext]'
           }
         }
       ],
