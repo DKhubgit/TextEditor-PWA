@@ -23,22 +23,22 @@ module.exports = () => {
         template: './index.html',
       }),
       new InjectManifest({ //will create a service worker based on the "schema" for more control. 
-        swSrc: '/src-sw.js',
+        swSrc: './src-sw.js',
         swDest: 'service-worker.js'
       }),
-      //creates a manifest.json that can bring the app outside of the browser
-      // new WebpackPwaManifest({
-      //   name: "Just Another Text Editor",
-      //   short_name: "JATE",
-      //   description: "Text editor that you can save, load, and it persists!",
-      //   background_color: "#fca311",
-      //   theme_color: "#fca311",
-      //   start_url: '/',
-      //   icons: [{
-      //     src: path.resolve('src/images/logo.png'),
-      //     sizes: [96, 128, 192, 256, 384, 512],
-      //   }],
-      // })
+      // creates a manifest.json that can bring the app outside of the browser
+      new WebpackPwaManifest({
+        name: "Just Another Text Editor",
+        short_name: "JATE",
+        description: "Text editor that you can save, load, and it persists!",
+        background_color: "#fca311",
+        theme_color: "#fca311",
+        start_url: '/',
+        icons: [{
+          src: path.resolve('src/images/logo.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+        }],
+      })
     ],
 
     module: {
