@@ -7,6 +7,9 @@
 An application that utilizes webpack, caching, and indexedDB to create a Progressive Web application. It's a single page website that can be installed and used outside of the browser with offline capabilities. This application is a simple text editor that can persist the data in either browser or on the installed app. 
 
 
+![JATE-screenshot](https://user-images.githubusercontent.com/103972201/193158003-2a048ac6-15ee-447b-aded-8705c08063c2.PNG)
+
+
 ## Installation
 
 To install this using the package.json, on the terminal simply type:
@@ -20,7 +23,6 @@ and this will install all the dependencies.
 Here is the link to the deployed application on Heroku!
 
 [my-jate.herokuapp.com](https://my-jate.herokuapp.com/)
-
 
 ## Contributing
 
