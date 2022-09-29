@@ -24,9 +24,6 @@ if (typeof editor === 'undefined') {
   loadSpinner();
 }
 
-let image = document.getElementsByTagName('img');
-image.setAttribute('src', img);
-
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
   // register workbox service worker
