@@ -8,7 +8,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      // install: './src/js/install.js'
+      install: './src/js/install.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -22,10 +22,6 @@ module.exports = () => {
         title: 'Production html file',
         template: './index.html',
       }),
-      new InjectManifest({ //will create a service worker based on the "schema" for more control. 
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js'
-      }),
       // creates a manifest.json that can bring the app outside of the browser
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
@@ -33,14 +29,20 @@ module.exports = () => {
         description: "Text editor that you can save, load, and it persists!",
         background_color: "#fca311",
         theme_color: "#fca311",
-        start_url: './',
-        publicPath: './',
+        crossorigin: 'use-credentials',
+        start_url: '/',
+        publicPath: '/',
+        fingerprints: false,
         icons: [{
           src: path.resolve('src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('assets', 'icons'),
         }],
-      })
+      }),
+      new InjectManifest({ //will create a service worker based on the "schema" for more control. 
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js'
+      }),
     ],
 
     module: {
