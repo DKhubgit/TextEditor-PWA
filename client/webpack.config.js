@@ -33,10 +33,12 @@ module.exports = () => {
         description: "Text editor that you can save, load, and it persists!",
         background_color: "#fca311",
         theme_color: "#fca311",
-        start_url: '/',
+        start_url: './',
+        publicPath: './',
         icons: [{
           src: path.resolve('src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512],
+          destination: path.join('assets', 'icons'),
         }],
       })
     ],
@@ -58,13 +60,6 @@ module.exports = () => {
             }
           }
         },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          loader: 'file-loader',
-          options: {
-            name: '/assets/icons/[name].[ext]'
-          }
-        }
       ],
     },
   };
